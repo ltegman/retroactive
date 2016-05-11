@@ -18,13 +18,16 @@ export default class Blink extends Component {
     this.timer = setInterval(this._flip.bind(this), 1000);
   }
 
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+
   _flip() {
     this.setState({ visible: !this.state.visible });
   }
 
   render() {
     const style = { visibility: this.state.visible ? 'visible' : 'hidden' };
-    console.log(style);
     return (
       <span {...this.props} style={style}>
         {this.props.children}
