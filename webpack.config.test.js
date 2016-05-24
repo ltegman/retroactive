@@ -1,20 +1,20 @@
 module.exports = {
   entry: {
-    app: ['./test/main.js']
+    app: ['./test/example.js'],
   },
-  devtools: 'source-maps',
+  devtools: 'inline-source-maps',
   module: {
     loaders: [
       {
         test: /.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel'
-      }
-    ]
+        loader: 'babel',
+      },
+    ],
   },
   output: {
     path: __dirname + '/test/build',
     publicPath: '/',
-    filename: 'bundle.js'
-  }
+    filename: 'bundle.js',
+  },
 };
